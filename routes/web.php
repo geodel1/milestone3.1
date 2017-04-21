@@ -35,8 +35,13 @@ Route::get('/sidebarmenu/users', function(){
 	return view('sidebarmenu.sidebarusers');
 });
 
+Route::get('/sidebarmenu/users', 'SidebarmenuController@showUsers'); 
+Route::get('/sidebarmenu/adduserform','SidebarmenuController@addUsers');
 
-
+Route::post('/sidebarmenu/users','SidebarmenuController@saveUser');
+Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteUser');  
+Route::get('/sidebarmenu/{id}/edit','SidebarmenuController@edituserform');
+Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editUser');
 
 
 Auth::routes();
