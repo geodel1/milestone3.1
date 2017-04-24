@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SIMS-Wits') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -107,25 +107,21 @@
                     
                   </li>
                   <li>
-                    <a href="categorie.php" >
+                    <a href="" >
                       <i class="glyphicon glyphicon-indent-left"></i>
                       <span>Categories</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="submenu-toggle">
+                    <a href='{{url("sidebarmenu/sidebaritems")}}' class="submenu-toggle">
                       <i class="glyphicon glyphicon-th-large"></i>
                       <span>Items</span>
                     </a>
-                    <ul class="nav submenu">
-                       <li><a href="product.php">Manage items</a> </li>
-                       <li><a href="add_product.php">Add items</a> </li>
-                   </ul>
                   </li>
                   <li>
-                    <a href="media.php" >
+                    <a href='{{url("sidebarmenu/sidebarsuppliers")}}' >
                       <i class="glyphicon glyphicon-picture"></i>
-                      <span>Media</span>
+                      <span>Suppliers</span>
                     </a>
                   </li>
                   <li>

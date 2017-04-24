@@ -273,8 +273,12 @@ class ComposerStaticInit5d8ba4178abddad61d5c8d998df1ce80
 
     public static $classMap = array (
         'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_06_055855_create_articles_table.php',
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_024936_create_categories_table.php',
         'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_10_032509_create_comments_table.php',
+        'CreateItemsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_010906_create_items_table.php',
         'CreatePasswordResets' => __DIR__ . '/../..' . '/database/migrations/2017_04_10_013141_create_password_resets.php',
+        'CreateSuppliersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_030655_create_suppliers_table.php',
+        'CreateUOMsTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_24_030624_create_u_o_ms_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_04_10_013802_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

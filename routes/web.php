@@ -43,5 +43,27 @@ Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteUser');
 Route::get('/sidebarmenu/{id}/edit','SidebarmenuController@edituserform');
 Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editUser');
 
+Route::get('/sidebarmenu/sidebaritems', function(){
+	return view('sidebarmenu.sidebaritems');
+});
+Route::get('/sidebarmenu/sidebaritems', 'SidebarmenuController@showItems'); 
+Route::get('/sidebarmenu/additemform','SidebarmenuController@addItems');
+Route::post('/sidebarmenu/sidebaritems','SidebarmenuController@saveItems');
+Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteItem');  
+Route::get('/sidebarmenu/{id}/edit','SidebarmenuController@edititemform');
+Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editItem');
+
+
+
+Route::get('/sidebarmenu/sidebarsuppliers', function(){
+	return view('sidebarmenu.sidebarsuppliers');
+});
+
+Route::get('/sidebarmenu/sidebarsuppliers', 'SidebarmenuController@showSuppliers'); 
+Route::get('/sidebarmenu/addsupplierform','SidebarmenuController@addSupplier');
+Route::post('/sidebarmenu/sidebarsuppliers','SidebarmenuController@saveSupplier');
+Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteSupplier');  
+Route::get('/sidebarmenu/{id}/edit','SidebarmenuController@editsupplierform');
+Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editSupplier');
 
 Auth::routes();
