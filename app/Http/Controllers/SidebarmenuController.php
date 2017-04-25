@@ -7,6 +7,8 @@ use Auth;
 use App\User;
 use App\Item;
 use App\Supplier;
+use App\Category;
+
 
 class SidebarmenuController extends Controller
 {
@@ -85,9 +87,8 @@ class SidebarmenuController extends Controller
 	}
 
 	function addItems(){
-	return view('sidebarmenu/additemform');
-
-
+		$suppliers = Supplier::all();
+		return view('sidebarmenu/additemform',compact('suppliers'));
 	}
 
 	function saveItems(Request $request){
@@ -99,8 +100,10 @@ class SidebarmenuController extends Controller
 		$new_item->user_name= Auth::user()->name;
 		$new_item->category_name = $request->category_name;
 		$new_item->UOM_name = $request->UOM_name;
-		$new_item->supplier_name = $request->supplier_name;
 		$new_item->save();
+
+		$supplier = Supplier::find($request->supplier_name);
+		$supplier->add_item($new_item);
 
 		return redirect('sidebarmenu/sidebaritems');
 		
@@ -180,4 +183,49 @@ class SidebarmenuController extends Controller
 		return redirect('sidebarmenu/sidebarsuppliers');
 
 	}
+
+	function editsupplierform($id){
+		$stbe = Supplier::find($id);
+
+		// Session::flash('message', 'Edit Article');
+
+		return view('sidebarmenu/editsupplierform', compact('stbe'));
+	}
+	function editSupplier($id, Request $request){
+		
+		$stbe = Supplier::find($id);	
+		
+		$stbe->supplier_name = $request->supplier_name;
+		$stbe->supplier_address = $request->supplier_address;
+		$stbe->supplier_email = $request->supplier_email;
+		$stbe->contact_no = $request->contact_no;
+		$stbe->order_price = $request->order_price;
+		$stbe->terms = $request->terms;
+		
+		$stbe->save();
+
+		return redirect('sidebarmenu/sidebarsuppliers');
+	}
+
+	function showCategories(){
+	$categories = Category::all();
+	return view('sidebarmenu/sidebarcategories', compact('categories'));
+	}
+
+	function addCategories(){
+	return view('sidebarmenu/addcategoryform');
+
+
+	}
+
+	function saveCategories(Request $request){
+		
+		$new_category = new Category();
+		$new_category->categories_name = $request->categories_name;
+
+		$new_category->save();
+
+		return redirect('sidebarmenu/sidebarcategories');
+	}	
+
 }

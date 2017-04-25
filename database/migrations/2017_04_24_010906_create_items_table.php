@@ -21,7 +21,7 @@ class CreateItemsTable extends Migration
             $table->string('user_name');
             $table->string('category_name');
             $table->string('UOM_name');
-            $table->string('supplier_name');
+           
             $table->timestamps();
 
            

@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Supplier;
 
 class Item extends Model
 {
-    public function supplier(){
-    	return $this->hasMany('items_suppliers', 'item_id', 'suppliers_id');
+    public function suppliers(){
+    	return $this->belongsToMany('App\Supplier','item_supplier','item_id','supplier_id');
     }
-
   
-    
 }

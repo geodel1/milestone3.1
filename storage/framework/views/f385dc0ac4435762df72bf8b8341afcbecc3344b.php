@@ -1,6 +1,4 @@
-@extends('layouts.admin_menu')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 	
 <div class="row">
@@ -16,7 +14,7 @@
           <span class="glyphicon glyphicon-th"></span>
           <span>Suppliers</span>
        </strong>
-         <a href='{{url("sidebarmenu/addsupplierform")}}' class="btn btn-info pull-right">Add New Supplier</a>
+         <a href='<?php echo e(url("sidebarmenu/addsupplierform")); ?>' class="btn btn-info pull-right">Add New Supplier</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
@@ -35,30 +33,30 @@
 
         <tbody>
         
-        @foreach($suppliers as $key => $supplier)
+        <?php $__currentLoopData = $suppliers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $supplier): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         
           <tr>
-	           <td class="text-center">{{$supplier->id}}</td>
-	           <td class="text-center">{{$supplier->supplier_name}}</td>
-	           <td class="text-center">{{$supplier->supplier_address}}</td>
-	           <td class="text-center">{{$supplier->supplier_email}}</td>
-	           <td class="text-center">{{$supplier->contact_no}}</td>
-             <td class="text-center">{{$supplier->order_price}}</td>
-             <td class="text-center">{{$supplier->terms}}</td>
+	           <td class="text-center"><?php echo e($supplier->id); ?></td>
+	           <td class="text-center"><?php echo e($supplier->supplier_name); ?></td>
+	           <td class="text-center"><?php echo e($supplier->supplier_address); ?></td>
+	           <td class="text-center"><?php echo e($supplier->supplier_email); ?></td>
+	           <td class="text-center"><?php echo e($supplier->contact_no); ?></td>
+             <td class="text-center"><?php echo e($supplier->order_price); ?></td>
+             <td class="text-center"><?php echo e($supplier->terms); ?></td>
 
 	           
 	           <td class="text-center">
 	             <div class="btn-group">
-	                <a href='{{url("sidebarmenu/$supplier->id/editSupplier")}}' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
+	                <a href='<?php echo e(url("sidebarmenu/$supplier->id/editSupplier")); ?>' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
 	                  <i class="glyphicon glyphicon-pencil"></i>
 	               </a>
-	                <a href='{{url("sidebarmenu/$supplier->id/delete")}}' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+	                <a href='<?php echo e(url("sidebarmenu/$supplier->id/delete")); ?>' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
 	                  <i class="glyphicon glyphicon-remove"></i>
 	                </a>
 	                </div>
 	           </td>
           </tr>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
        </tbody>
      </table>
      </div>
@@ -66,5 +64,7 @@
   </div>
 </div>    
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts.admin_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

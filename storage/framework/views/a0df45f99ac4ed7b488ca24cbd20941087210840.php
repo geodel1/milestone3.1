@@ -1,6 +1,4 @@
-@extends('layouts.admin_menu')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 	
 <div class="row">
@@ -16,7 +14,7 @@
           <span class="glyphicon glyphicon-th"></span>
           <span>Users</span>
        </strong>
-         <a href='{{url("sidebarmenu/adduserform")}}' class="btn btn-info pull-right">Add New User</a>
+         <a href='<?php echo e(url("sidebarmenu/adduserform")); ?>' class="btn btn-info pull-right">Add New User</a>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">
@@ -32,29 +30,29 @@
         </thead>
 
         <tbody>
-        @foreach($allusers as $key => $user)
+        <?php $__currentLoopData = $allusers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         
         
           <tr>
-	           <td class="text-center">{{$user->id}}</td>
-	           <td class="text-center">{{$user->name}}</td>
-	           <td class="text-center">{{$user->email}}</td>
-	           <td class="text-center">{{$user->role}}</td>
-	           <td class="text-center">{{$user->updated_at}}</td>
+	           <td class="text-center"><?php echo e($user->id); ?></td>
+	           <td class="text-center"><?php echo e($user->name); ?></td>
+	           <td class="text-center"><?php echo e($user->email); ?></td>
+	           <td class="text-center"><?php echo e($user->role); ?></td>
+	           <td class="text-center"><?php echo e($user->updated_at); ?></td>
 
 	           
 	           <td class="text-center">
 	             <div class="btn-group">
-	                <a href='{{url("sidebarmenu/$user->id/editUser")}}' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
+	                <a href='<?php echo e(url("sidebarmenu/$user->id/editUser")); ?>' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
 	                  <i class="glyphicon glyphicon-pencil"></i>
 	               </a>
-	                <a href='{{url("sidebarmenu/$user->id/delete")}}' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+	                <a href='<?php echo e(url("sidebarmenu/$user->id/delete")); ?>' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
 	                  <i class="glyphicon glyphicon-remove"></i>
 	                </a>
 	                </div>
 	           </td>
           </tr>
-       	@endforeach
+       	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
        </tbody>
      </table>
      </div>
@@ -62,5 +60,7 @@
   </div>
 </div>    
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts.admin_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

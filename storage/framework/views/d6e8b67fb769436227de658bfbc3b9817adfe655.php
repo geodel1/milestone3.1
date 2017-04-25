@@ -1,6 +1,4 @@
-@extends('layouts.admin_menu')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="row">
@@ -20,8 +18,9 @@
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <form method="post" action='{{url("sidebarmenu/sidebaritems")}}'>
-          {{csrf_field()}}
+          <form method="post" action='<?php echo e(url("sidebarmenu/sidebaritems")); ?>'>
+          <?php echo e(csrf_field()); ?>
+
             <div class="form-group">
                 <label for="name">Item Name</label>
                 <input type="text" class="form-control" name="item_name" placeholder="Item Name">
@@ -43,11 +42,11 @@
             <div class="form-group">
               <label for="supplier">Supplier </label>
                 <select class="form-control" name ="supplier_name">
-                @foreach($suppliers as $supplier)
-                  <option value="{{$supplier->id}}">{{$supplier->supplier_name}}</option>
+                <?php $__currentLoopData = $suppliers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $supplier): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <option value="<?php echo e($supplier->id); ?>"><?php echo e($supplier->supplier_name); ?></option>
 
 
-                @endforeach  
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
                 </select>    
             </div>
             <div class="form-group clearfix">
@@ -61,4 +60,5 @@
     </div>
   </div>
 </div>
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.admin_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
