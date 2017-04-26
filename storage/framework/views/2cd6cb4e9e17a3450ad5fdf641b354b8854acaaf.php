@@ -1,7 +1,7 @@
 <div class="container">
 <?php $__env->startSection('content'); ?>
-<div class="content">
-    <div class="title m-b-md">
+<div class="row ">
+    <div class="title m-b-md ">
        SIMS - Wits
 
     </div>

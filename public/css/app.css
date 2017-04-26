@@ -18,6 +18,7 @@ body{
 
 .title {
     font-size: 84px;
+    text-align: center;
 }
 
 .definition {
@@ -28,6 +29,7 @@ body{
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .m-b-md {

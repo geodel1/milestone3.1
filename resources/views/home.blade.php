@@ -2,8 +2,8 @@
 
 <div class="container">
 @section('content')
-<div class="content">
-    <div class="title m-b-md">
+<div class="row ">
+    <div class="title m-b-md ">
        SIMS - Wits
 
     </div>
