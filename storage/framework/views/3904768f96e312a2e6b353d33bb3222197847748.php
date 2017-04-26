@@ -31,7 +31,7 @@
         
           <tr>
              <td class="text-center"><?php echo e($category->id); ?></td>
-             <td class="text-center"><?php echo e($category->category_name); ?></td>
+             <td class="text-center"><?php echo e($category->categories_name); ?></td>
              
              <td class="text-center">
                <div class="btn-group">

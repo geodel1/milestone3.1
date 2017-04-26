@@ -228,4 +228,10 @@ class SidebarmenuController extends Controller
 		return redirect('sidebarmenu/sidebarcategories');
 	}	
 
+	function CountUser(){
+		$users = User::all();
+		$items = Item::all();
+		$suppliers = Supplier::all();
+		return view('sidebarmenu.sidebardashboard',compact('users','items', 'suppliers'));
+	}
 }

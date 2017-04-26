@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Twits</title>
+        <title>SIMS-Wits</title>
 
         <!-- Fonts -->
         
@@ -49,7 +49,7 @@
                 font-size: 84px;
             }
 
-            .links > a {
+            .definition {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 12px;
@@ -62,6 +62,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            
         </style>
     </head>
     <body>
@@ -79,16 +90,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   SIMS - Wits
+
+                </div>
+                <div class="definition">
+                    Sales and Inventory Management System - (Web and IT Solutions)
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+              
             </div>
         </div>
     </body>

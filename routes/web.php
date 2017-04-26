@@ -30,9 +30,7 @@ Route::post('/articles/{id}/edit','ArticlesController@editArticle');
 Route::post('/articles/{id}/comment','ArticlesController@addComment'); 
 
 
-Route::get('/sidebarmenu/dashboard', function(){
-	return view('sidebarmenu.sidebardashboard');
-});
+Route::get('/sidebarmenu/dashboard', 'SidebarmenuController@CountUser');
 
 
 

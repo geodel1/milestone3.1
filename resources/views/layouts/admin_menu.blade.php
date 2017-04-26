@@ -84,16 +84,13 @@
             </div>
         </nav>
         
+    
+    
         <div class="row">
-            <div>
-                
-            </div>
-           
-        </div>
-        <div class="row">
-            <div class="sidebar col-md-3">
-                <ul>
-                  <li>
+
+            <div class="sidebar col-sm-3 col-md-3">
+                <ul class="nav nav-sidebar">
+                  <li class="active">
                     <a href='{{url("sidebarmenu/dashboard")}}'>
                       <i class="glyphicon glyphicon-home"></i>
                       <span>Dashboard</span>
@@ -106,12 +103,7 @@
                     </a>
                     
                   </li>
-                  <li>
-                    <a href='{{url("sidebarmenu/sidebarcategories")}}' >
-                      <i class="glyphicon glyphicon-indent-left"></i>
-                      <span>Categories</span>
-                    </a>
-                  </li>
+                  
                   <li>
                     <a href='{{url("sidebarmenu/sidebaritems")}}' class="submenu-toggle">
                       <i class="glyphicon glyphicon-th-large"></i>
@@ -120,24 +112,11 @@
                   </li>
                   <li>
                     <a href='{{url("sidebarmenu/sidebarsuppliers")}}' >
-                      <i class="glyphicon glyphicon-picture"></i>
+                      <i class="glyphicon glyphicon-list"></i>
                       <span>Suppliers</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#" class="submenu-toggle">
-                      <i class="glyphicon glyphicon-th-list"></i>
-                       <span>Sales</span>
-                    </a>
-                      
-                  </li>
-                  <li>
-                    <a href="#" class="submenu-toggle">
-                      <i class="glyphicon glyphicon-signal"></i>
-                       <span>Sales Report</span>
-                      </a>
-                      
-                  </li>
+                  
                 </ul>
             </div>
 
@@ -145,7 +124,7 @@
             <div class= "col-md-9">
                 @yield('content')
             </div>   
-        </div>
+          </div>
     </div>
 
     <!-- Scripts -->
