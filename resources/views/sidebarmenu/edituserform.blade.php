@@ -5,7 +5,9 @@
 
 <div class="row">
    <div class="col-md-12">
-     
+       @if(Session::has('message'))
+     <p class="alert alert-success text-center">{{Session::get('message')}}</p>
+      @endif
    </div>
 </div>
 
@@ -20,7 +22,7 @@
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <form method="post" action='{{url("sidebarmenu/{$utbe->id}/edit")}}'>
+          <form method="post" action='{{url("sidebarmenu/{$utbe->id}/editUser")}}'>
           {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name</label>

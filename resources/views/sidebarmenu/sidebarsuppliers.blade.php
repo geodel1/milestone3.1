@@ -5,7 +5,9 @@
 	
 <div class="row">
    <div class="col-md-12">
-  
+      @if(Session::has('message'))
+     <p class="alert alert-success text-center">{{Session::get('message')}}</p>
+      @endif
    </div>
 </div>
 <div class="row">
@@ -52,7 +54,7 @@
 	                <a href='{{url("sidebarmenu/$supplier->id/editSupplier")}}' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
 	                  <i class="glyphicon glyphicon-pencil"></i>
 	               </a>
-	                <a href='{{url("sidebarmenu/$supplier->id/delete")}}' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+	                <a href='{{url("sidebarmenu/$supplier->id/deleteSupplier")}}' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
 	                  <i class="glyphicon glyphicon-remove"></i>
 	                </a>
 	                </div>

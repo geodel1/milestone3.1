@@ -8,7 +8,7 @@ use App\User;
 use App\Item;
 use App\Supplier;
 use App\Category;
-
+use Session;
 
 class SidebarmenuController extends Controller
 {
@@ -39,6 +39,7 @@ class SidebarmenuController extends Controller
 		$new_user->remember_token = $request->_token;
 		$new_user->save();
 
+		Session::flash('message', 'User Successfully Added');
 		return redirect('sidebarmenu/users');
 		
 	}
@@ -49,7 +50,7 @@ class SidebarmenuController extends Controller
 		$usertobe_deleted->delete();
 		$allusers = User::all();
 		
-		// Session::flash('message', 'User Successfully Deleted');
+		Session::flash('message', 'User Successfully Deleted');
 		return redirect('sidebarmenu/users');
 
 	}
@@ -74,7 +75,7 @@ class SidebarmenuController extends Controller
 		$utbe->remember_token = $request->_token;
 		$utbe->save();
 
-		// Session::flash('message', 'User Successfully Edited');
+		Session::flash('message', 'User Successfully Edited');
 
 		return redirect('sidebarmenu/users');
 		
@@ -88,6 +89,8 @@ class SidebarmenuController extends Controller
 
 	function addItems(){
 		$suppliers = Supplier::all();
+
+		
 		return view('sidebarmenu/additemform',compact('suppliers'));
 	}
 
@@ -104,7 +107,7 @@ class SidebarmenuController extends Controller
 
 		$supplier = Supplier::find($request->supplier_name);
 		$supplier->add_item($new_item);
-
+		Session::flash('message', 'Item Successfully Added');
 		return redirect('sidebarmenu/sidebaritems');
 		
 	}
@@ -112,13 +115,13 @@ class SidebarmenuController extends Controller
 	function edititemform($id){
 		$itbe = Item::find($id);
 
-		// Session::flash('message', 'Edit Article');
+		
 
 		return view('sidebarmenu/edititemform', compact('itbe'));
 	}
 
 	function editItem($id, Request $request){
-		
+
 		$itbe = Item::find($id);	
 		
 		$itbe->item_name = $request->item_name;
@@ -127,10 +130,10 @@ class SidebarmenuController extends Controller
 		$itbe->user_name = $request->user_name;
 		$itbe->category_name = $request->category_name;
 		$itbe->UOM_name = $request->UOM_name;
-		$itbe->supplier_name = $request->supplier_name;
+		//$itbe->supplier_name = $request->supplier_name;
 		$itbe->save();
 
-		// Session::flash('message', 'User Successfully Edited');
+		Session::flash('message', 'Item Successfully Edited');
 
 		return redirect('sidebarmenu/sidebaritems');
 		
@@ -141,7 +144,7 @@ class SidebarmenuController extends Controller
 		$itbe->delete();
 		$items = Item::all();
 		
-		// Session::flash('message', 'User Successfully Deleted');
+		Session::flash('message', 'Item Successfully Deleted');
 		return redirect('sidebarmenu/sidebaritems');
 
 	}
@@ -170,6 +173,7 @@ class SidebarmenuController extends Controller
 		
 		$new_supplier->save();
 
+		Session::flash('message', 'Supplier Successfully Added');
 		return redirect('sidebarmenu/sidebarsuppliers');
 		
 	}
@@ -179,7 +183,7 @@ class SidebarmenuController extends Controller
 		$stbd->delete();
 		$stbd = Supplier::all();
 		
-		// Session::flash('message', 'User Successfully Deleted');
+		Session::flash('message', 'User Successfully Deleted');
 		return redirect('sidebarmenu/sidebarsuppliers');
 
 	}
@@ -187,12 +191,11 @@ class SidebarmenuController extends Controller
 	function editsupplierform($id){
 		$stbe = Supplier::find($id);
 
-		// Session::flash('message', 'Edit Article');
+		Session::flash('message', 'Edited supplier');
 
 		return view('sidebarmenu/editsupplierform', compact('stbe'));
 	}
 	function editSupplier($id, Request $request){
-		
 		$stbe = Supplier::find($id);	
 		
 		$stbe->supplier_name = $request->supplier_name;
@@ -203,7 +206,7 @@ class SidebarmenuController extends Controller
 		$stbe->terms = $request->terms;
 		
 		$stbe->save();
-
+		Session::flash('message', 'Successfully edited supplier');
 		return redirect('sidebarmenu/sidebarsuppliers');
 	}
 

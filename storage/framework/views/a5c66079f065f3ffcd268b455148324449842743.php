@@ -3,7 +3,9 @@
 
 <div class="row">
    <div class="col-md-12">
-     
+       <?php if(Session::has('message')): ?>
+     <p class="alert alert-success text-center"><?php echo e(Session::get('message')); ?></p>
+      <?php endif; ?>
    </div>
 </div>
 
@@ -18,7 +20,7 @@
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <form method="post" action='<?php echo e(url("sidebarmenu/{$utbe->id}/edit")); ?>'>
+          <form method="post" action='<?php echo e(url("sidebarmenu/{$utbe->id}/editUser")); ?>'>
           <?php echo e(csrf_field()); ?>
 
             <div class="form-group">

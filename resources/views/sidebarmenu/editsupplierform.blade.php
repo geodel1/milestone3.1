@@ -20,7 +20,7 @@
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <form method="post" action='{{url("sidebarmenu/{$stbe->id}/edit")}}'>
+          <form method="post" action='{{url("sidebarmenu/{$stbe->id}/editSupplier")}}'>
           {{csrf_field()}}
             <div class="form-group">
                 <label for="supplier_name">Supplier Name</label>

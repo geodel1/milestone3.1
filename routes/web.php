@@ -47,9 +47,9 @@ Route::get('/sidebarmenu/users', 'SidebarmenuController@showUsers');
 Route::get('/sidebarmenu/adduserform','SidebarmenuController@addUsers');
 
 Route::post('/sidebarmenu/users','SidebarmenuController@saveUser');
-Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteUser');  
+Route::get('/sidebarmenu/{id}/deleteUser','SidebarmenuController@deleteUser');  
 Route::get('/sidebarmenu/{id}/editUser','SidebarmenuController@edituserform');
-Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editUser');
+Route::post('/sidebarmenu/{id}/editUser','SidebarmenuController@editUser');
 
 
 
@@ -84,8 +84,8 @@ Route::get('/sidebarmenu/sidebarsuppliers', function(){
 Route::get('/sidebarmenu/sidebarsuppliers', 'SidebarmenuController@showSuppliers'); 
 Route::get('/sidebarmenu/addsupplierform','SidebarmenuController@addSupplier');
 Route::post('/sidebarmenu/sidebarsuppliers','SidebarmenuController@saveSupplier');
-Route::get('/sidebarmenu/{id}/delete','SidebarmenuController@deleteSupplier');  
+Route::get('/sidebarmenu/{id}/deleteSupplier','SidebarmenuController@deleteSupplier');  
 Route::get('/sidebarmenu/{id}/editSupplier','SidebarmenuController@editsupplierform');
-Route::post('/sidebarmenu/{id}/edit','SidebarmenuController@editSupplier');
+Route::post('/sidebarmenu/{id}/editSupplier','SidebarmenuController@editSupplier');
 
 Auth::routes();

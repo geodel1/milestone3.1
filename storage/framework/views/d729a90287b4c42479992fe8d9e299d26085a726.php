@@ -18,7 +18,7 @@
       </div>
       <div class="panel-body">
         <div class="col-md-6">
-          <form method="post" action='<?php echo e(url("sidebarmenu/{$stbe->id}/edit")); ?>'>
+          <form method="post" action='<?php echo e(url("sidebarmenu/{$stbe->id}/editSupplier")); ?>'>
           <?php echo e(csrf_field()); ?>
 
             <div class="form-group">

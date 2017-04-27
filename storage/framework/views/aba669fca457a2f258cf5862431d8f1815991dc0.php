@@ -3,7 +3,9 @@
 
 <div class="row">
    <div class="col-md-12">
-     
+     <?php if(Session::has('message')): ?>
+     <p class="alert alert-success text-center"><?php echo e(Session::get('message')); ?></p>
+      <?php endif; ?>
    </div>
 </div>
 

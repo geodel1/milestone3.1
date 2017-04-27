@@ -5,7 +5,9 @@
 
 <div class="row">
    <div class="col-md-12">
-     
+      @if(Session::has('message'))
+     <p class="alert alert-success text-center">{{Session::get('message')}}</p>
+      @endif
    </div>
 </div>
 

@@ -3,7 +3,9 @@
 	
 <div class="row">
    <div class="col-md-12">
-  
+     <?php if(Session::has('message')): ?>
+     <p class="alert alert-success text-center"><?php echo e(Session::get('message')); ?></p>
+      <?php endif; ?>
    </div>
 </div>
 <div class="row">
@@ -46,7 +48,7 @@
 	                <a href='<?php echo e(url("sidebarmenu/$user->id/editUser")); ?>' class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit">
 	                  <i class="glyphicon glyphicon-pencil"></i>
 	               </a>
-	                <a href='<?php echo e(url("sidebarmenu/$user->id/delete")); ?>' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
+	                <a href='<?php echo e(url("sidebarmenu/$user->id/deleteUser")); ?>' class="btn btn-xs btn-danger" data-toggle="tooltip" title="Remove">
 	                  <i class="glyphicon glyphicon-remove"></i>
 	                </a>
 	                </div>

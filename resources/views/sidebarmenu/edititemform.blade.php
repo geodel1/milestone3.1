@@ -5,7 +5,9 @@
 
 <div class="row">
    <div class="col-md-12">
-     
+    @if(Session::has('message'))
+     <p class="alert alert-success text-center">{{Session::get('message')}}</p>
+      @endif
    </div>
 </div>
 
@@ -46,10 +48,7 @@
                 <label for="UOM_name">UOM Name</label>
                 <input type="text" class="form-control" name ="UOM_name" value="<?php echo $itbe->UOM_name; ?> ">
             </div>
-            <div class="form-group">
-                <label for="supplier_name">Supplier Name</label>
-                <input type="text" class="form-control" name ="supplier_name" value="<?php echo $itbe->supplier_name; ?> ">
-            </div>
+
 
 
             <div class="form-group clearfix">
